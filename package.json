@@ -2,7 +2,7 @@
   "name": "profile",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://pasindumuth.github.io/profile",
+  "homepage": "http://pasindumuthukuda.com",
   "dependencies": {
     "@material-ui/core": "^4.8.2",
     "@testing-library/jest-dom": "^4.2.4",
