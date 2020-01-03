@@ -1,5 +1,10 @@
 import React from "react";
-import { createMuiTheme, MuiThemeProvider } from "@material-ui/core";
+import {
+  createMuiTheme,
+  MuiThemeProvider,
+  Box,
+  makeStyles
+} from "@material-ui/core";
 import { BrowserRouter as Router } from "react-router-dom";
 import Header from "components/Header";
 import Footer from "components/Footer";
@@ -21,13 +26,38 @@ const theme = createMuiTheme({
   }
 });
 
+// These styles, along with the boxes they are applied to, are used to keep the footer at the bottom
+// https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/
+const useStyles = makeStyles({
+  pageContainer: {
+    position: "relative",
+    minHeight: "100vh"
+  },
+  contentContainer: {
+    paddingBottom: 100
+  },
+  footer: {
+    bottom: 0,
+    height: 100,
+    position: "absolute",
+    width: "100%"
+  }
+});
+
 const App: React.FC = () => {
+  const classes = useStyles();
   return (
     <MuiThemeProvider theme={theme}>
       <Router>
-        <Header />
-        <Content />
-        <Footer />
+        <Box className={classes.pageContainer}>
+          <Header />
+          <Box className={classes.contentContainer}>
+            <Content />
+          </Box>
+          <Box className={classes.footer}>
+            <Footer />
+          </Box>
+        </Box>
       </Router>
     </MuiThemeProvider>
   );

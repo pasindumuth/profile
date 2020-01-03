@@ -18,7 +18,8 @@ const useStyles = makeStyles(theme => ({
     paddingTop: 20,
     paddingBottom: 30,
     maxWidth: 900,
-    margin: "0 auto"
+    margin: "0 auto",
+    overflowX: "hidden"
   },
   intro: {
     paddingBottom: 20
@@ -93,8 +94,14 @@ const PortfolioList: React.FC = () => {
     <Grid className={classes.root} container justify="center">
       <Grid container item justify="center" spacing={1}>
         <Grid item xs={10}>
-          <Typography variant="h3" gutterBottom>Portfolio</Typography>
-          <Typography className={classes.intro} variant="body1" color="textSecondary">
+          <Typography variant="h3" gutterBottom>
+            Portfolio
+          </Typography>
+          <Typography
+            className={classes.intro}
+            variant="body1"
+            color="textSecondary"
+          >
             This is a list of projects I did that I'm most proud of.
           </Typography>
         </Grid>
