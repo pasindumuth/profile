@@ -15,10 +15,13 @@ import grey from "@material-ui/core/colors/grey";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    paddingTop: 10,
-    paddingBottom: 20,
+    paddingTop: 20,
+    paddingBottom: 30,
     maxWidth: 900,
     margin: "0 auto"
+  },
+  intro: {
+    paddingBottom: 20
   },
   card: {
     marginTop: 20,
@@ -88,6 +91,14 @@ const PortfolioList: React.FC = () => {
   const classes = useStyles();
   return (
     <Grid className={classes.root} container justify="center">
+      <Grid container item justify="center" spacing={1}>
+        <Grid item xs={10}>
+          <Typography variant="h3" gutterBottom>Portfolio</Typography>
+          <Typography className={classes.intro} variant="body1" color="textSecondary">
+            This is a list of projects I did that I'm most proud of.
+          </Typography>
+        </Grid>
+      </Grid>
       <Grid container item justify="center" spacing={1}>
         <Grid item xs={10}>
           <PortfolioItem
