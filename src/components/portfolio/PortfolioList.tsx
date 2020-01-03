@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: 30,
     maxWidth: 900,
     margin: "0 auto",
-    overflowX: "hidden"
+    overflowX: "hidden" // https://github.com/mui-org/material-ui/issues/7466
   },
   intro: {
     paddingBottom: 20
