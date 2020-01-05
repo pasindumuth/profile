@@ -33,16 +33,16 @@ const UniversalDB: React.FC = () => {
         </Typography>
         <Typography variant="body1" color="textSecondary">
           Ever since working for Google, I've been fascinated by distributed
-          database management systems. One system has been particular
-          captivating: Google Spanner. Spanner advertises consistency guarantees
+          database management systems. One system has captivated me in
+          particular: Google Spanner. Spanner advertises consistency guarantees
           that one would not think are possible with the data integrity
-          guarantees that Spanner also provides. So I took it on myself to learn
-          as much as I could about it, and try building my own Distributed
+          guarantees that Spanner also provides. So I took it upon myself to
+          learn as much as I could about it, and try building my own Distributed
           Database Management System (DDBMS) to learn a thing or two about large
           scale systems design.
           <br />
           <br />
-          UniversalDB is a work in progress DDBMS that I've been developing
+          UniversalDB is a work-in-progress DDBMS that I've been developing
           since August 2019. You can find it on my Github,{" "}
           <Link
             href="https://github.com/pasindumuth/UniversalDB"
@@ -72,14 +72,14 @@ const UniversalDB: React.FC = () => {
             </li>
             <li>
               Wrote integration tests by creating a simulated network layer with
-              fault-injection and simulating the execution of a deployment of
-              the system, all in single UNIX process
+              fault-injection to simulate the execution of multiple nodes, all
+              in single UNIX process
             </li>
             <li>
               Wrote thorough unit tests for every non-IO class using GTest
             </li>
             <li>
-              Employeed professional C++ documentation practices with Doxygen
+              Employed professional C++ documentation practices with Doxygen
             </li>
             <li>Managed production deployment with Docker and Ansible</li>
           </Typography>
@@ -98,7 +98,7 @@ const UniversalDB: React.FC = () => {
         <Typography variant="h4">High Level Design</Typography>
         <Typography variant="body1" color="textSecondary">
           We base much of our design on the design of Google Spanner. The main
-          paper for spanner can be found{" "}
+          paper for Spanner can be found{" "}
           <Link
             href="https://static.googleusercontent.com/media/research.google.com/en//archive/spanner-osdi2012.pdf"
             color="secondary"
@@ -124,7 +124,7 @@ const UniversalDB: React.FC = () => {
         <br />
         <br />
         <Typography variant="body1" color="textSecondary">
-          One of the corner stone algorithms in UniversalDB is the{" "}
+          One of the key algorithms in UniversalDB is the{" "}
           <strong>Multi-Paxos algorithm</strong>, used for maintaining
           consistency across replicated data. We have 2 types of servers, Data
           Masters and Slaves.
@@ -134,13 +134,13 @@ const UniversalDB: React.FC = () => {
           in a group being in a unique availability zone (an availability zone
           is a distinct geographic region where if a natural disaster were to
           take out a datacenter in that region, it's unlikely that another
-          datacenter was also taken out from a different availability zone).
-          Each partition of Slaves forms a Paxos group, meaning that those
-          slaves executes the Multi-Paxos algorithm to keep their data
-          consistent with each other.
+          datacenter was also taken out in a different availability zone). Each
+          partition of Slaves forms a Paxos group, meaning that those Slaves
+          execute the Multi-Paxos algorithm to keep their data consistent with
+          each other.
           <br />
           <br />
-          There are exactly <i>n</i> Data Masters, each in it's own availability
+          There are exactly <i>n</i> Data Masters, each in its own availability
           zone. The Data Masters together form their own Paxos group.
         </Typography>
         <br />
@@ -152,7 +152,7 @@ const UniversalDB: React.FC = () => {
           <i>(database_id, table_id, start_key, end_key)</i>. As one would
           guess, the key-value pairs in each table in each database is
           partitioned across a set of Tablets. Tablets hold a contiguous
-          patition of keys to faciliate range queries. A table is partitioned
+          partition of keys to facilitate range queries. A table is partitioned
           into multiple Tablets when the table starts to get too large to hold
           in a single Tablet (i.e. when the table is too large for a single
           Slave to hold all of its data).
@@ -220,24 +220,25 @@ const UniversalDB: React.FC = () => {
         <Typography variant="body1" color="textSecondary">
           Each Tablet is managed by exactly one thread (a thread can handle
           multiple tablets). These threads are called the Tablet Threads, where
-          data from a Tablet can only be read and written to by it's
-          corresponding Tablet Thread. This prevents race conditions.
+          data from a Tablet can only be read and written to by its
+          corresponding Tablet Thread. This is the actor model of computing, and
+          partitioning data like this so that only one thread can acccess any
+          given piece prevents race conditions.
         </Typography>
         <br />
         <Typography variant="h6">Network Thread</Typography>
         <Typography variant="body1" color="textSecondary">
-          One of the Slaves threads is doesn't manage any Tablets, and instead
-          handles the Network. This is called the Network Thread. It's the
-          interface between the Tablet Threads and the Network. It listens to
-          incoming connections and messages, and places them into a queue to be
-          handled by the correct Tablet Thread. The Network Thread is also
-          responsible for taking the responses produced by the Tablet Threads
-          sending out.
+          One of the Slave threads don't manage any Tablets, and instead handles
+          the Network. This is called the Network Thread. It's the interface
+          between the Tablet Threads and the Network. It listens to incoming
+          connections and messages, and places them into a queue to be handled
+          by the correct Tablet Thread. The Network Thread is also responsible
+          for taking the responses sent out by the Tablet Threads.
           <br />
           <br />
           The Network Thread uses Boost ASIO to asynchronously handle multiple
-          connections, both listening to connection requests as well as reading
-          from existing connections.
+          connections, both listening to connection requests as well as sending
+          and receiving data with existing connections.
         </Typography>
       </Grid>
     </Grid>
