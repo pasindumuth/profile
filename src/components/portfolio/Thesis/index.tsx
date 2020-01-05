@@ -1,10 +1,10 @@
 import React from "react";
 import { Grid, Typography, makeStyles, Link } from "@material-ui/core";
 import GreenBox from "components/common/GreenBox";
-import subtraceSample from "assets/subtrace-sample.png";
-import longSubtraceSample from "assets/long-subtrace-sample.png";
-import subtraceToPattern from "assets/subtrace-to-pattern.png";
-import patternsInCluster from "assets/patterns-in-cluster.png";
+import subtraceSample from "./assets/subtrace-sample.png";
+import longSubtraceSample from "./assets/long-subtrace-sample.png";
+import subtraceToPattern from "./assets/subtrace-to-pattern.png";
+import patternsInCluster from "./assets/patterns-in-cluster.png";
 
 const useStyles = makeStyles({
   root: {

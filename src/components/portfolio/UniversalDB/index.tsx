@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Typography, makeStyles, Link } from "@material-ui/core";
 import GreenBox from "components/common/GreenBox";
-import architecture from "assets/universaldb-architecture.png";
+import architecture from "./assets/universaldb-architecture.png";
 
 const useStyles = makeStyles({
   root: {

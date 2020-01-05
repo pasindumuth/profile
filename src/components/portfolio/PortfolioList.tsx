@@ -9,9 +9,9 @@ import {
 } from "@material-ui/core";
 import { withRouter, RouteComponentProps } from "react-router-dom";
 import routes from "routes";
-import xperielCardImage from "assets/xperiel-card-image.png";
-import universalDBCardImage from "assets/universaldb-architecture.png";
-import thesisCardImage from "assets/trace-viz.png";
+import xperielCardImage from "./Xperiel/assets/xperiel-card-image.png";
+import universalDBCardImage from "./UniversalDB/assets/universaldb-architecture.png";
+import thesisCardImage from "./Thesis/assets/trace-viz.png";
 import grey from "@material-ui/core/colors/grey";
 
 const useStyles = makeStyles(theme => ({

@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Typography, makeStyles } from "@material-ui/core";
-import scene3dEditor from "assets/scene-3d-editor.png";
-import pointlightDemo from "assets/pointlight-demo.png";
+import scene3dEditor from "./assets/scene-3d-editor.png";
+import pointlightDemo from "./assets/pointlight-demo.png";
 import GreenBox from "components/common/GreenBox";
 
 const useStyles = makeStyles({
