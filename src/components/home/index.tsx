@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Typography, makeStyles, Box } from "@material-ui/core";
-import profilePic from "assets/bae_photo.jpg";
+import profilePic from "assets/profile-pic.jpg";
 
 const useStyles = makeStyles({
   root: {

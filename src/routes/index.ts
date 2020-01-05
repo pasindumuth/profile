@@ -4,7 +4,8 @@ let routes: { [key: string]: string } = {
   HOME: "/",
   PORTFOLIO: PORTFOLIO,
   UNIVERSALDB: PORTFOLIO + "/universaldb",
-  XPERIEL: PORTFOLIO + "/xperiel"
+  XPERIEL: PORTFOLIO + "/xperiel",
+  THESIS: PORTFOLIO + "/thesis"
 };
 
 export default routes;

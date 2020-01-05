@@ -11,6 +11,7 @@ import { withRouter, RouteComponentProps } from "react-router-dom";
 import routes from "routes";
 import xperielCardImage from "assets/xperiel-card-image.png";
 import universalDBCardImage from "assets/universaldb-architecture.png";
+import thesisCardImage from "assets/trace-viz.png";
 import grey from "@material-ui/core/colors/grey";
 
 const useStyles = makeStyles(theme => ({
@@ -123,12 +124,25 @@ const PortfolioList: React.FC = () => {
           <PortfolioItem
             title="Universal DB Project"
             period="June 2019 - present"
-            brief="UniversalDB is a Disributed Database Management Systems that I started
-            working on as a fun and inustructive side project. I used industry standard
+            brief="UniversalDB is a Distributed Database Management System that I started
+            working on as a fun and instructive side project. I used industry standard
             tools and algorithms to build a reliable and high performance system."
             image={universalDBCardImage}
-            alttext="Xperiel 3D Scene editor"
+            alttext="Universal DB"
             path={routes.UNIVERSALDB}
+          />
+        </Grid>
+        <Grid item xs={10}>
+          <PortfolioItem
+            title="Undergraduate Thesis: Visualizing Function Execution Traces with Pattern Mining"
+            period="May 2017 - Dec 2017"
+            brief="During my undergrad, I did an undergraduate thesis with my systems
+            professor. The project was to create an algorithm to help mine for patterns in
+            function execution traces. The goal was to make execution traces more accessible
+            for manual analysis."
+            image={thesisCardImage}
+            alttext="Undergraduate Thesis"
+            path={routes.THESIS}
           />
         </Grid>
       </Grid>
