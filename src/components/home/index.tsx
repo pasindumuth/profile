@@ -64,11 +64,7 @@ const Home: React.FC = () => {
       </Grid>
       <Grid item xs={10} sm={4}>
         <Box className={classes.imageContainer}>
-          <img
-            className={classes.image}
-            src={profilePic}
-            alt="3D Scene Editor"
-          />
+          <img className={classes.image} src={profilePic} alt="Profile" />
         </Box>
       </Grid>
     </Grid>

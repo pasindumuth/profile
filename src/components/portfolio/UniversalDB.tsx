@@ -111,7 +111,7 @@ const UniversalDB: React.FC = () => {
         <img
           className={classes.partialImage}
           src={architecture}
-          alt="3D Scene Editor"
+          alt="Architecture"
         />
         <Typography
           className={classes.imageCaption}
