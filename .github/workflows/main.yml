@@ -1,0 +1,15 @@
+name: CI
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    env:
+      ACTIONS_RUNNER_DEBUG: true
+    runs-on: ubuntu-latest
+    steps:
+      - name: list
+        run: ls
+      - name: deploys
+        run: yarn run deploy
