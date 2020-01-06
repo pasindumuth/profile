@@ -160,8 +160,7 @@ const Thesis: React.FC = () => {
           function call. When a function calls another function, a box with the
           color of the called function is drawn above the calling function. So
           the visualization below essentially shows how the call stack evolves
-          over time (where going to the right is how the call stack looks in the
-          future).
+          over time.
         </Typography>
         <br />
         <img
@@ -182,10 +181,9 @@ const Thesis: React.FC = () => {
         <Typography variant="body1" color="textSecondary">
           Of course, this trace is only a few dozen events long. A real trace
           grows to the size of hundreds of millions of events. It quickly
-          becomes hard to display such a trace on one page. Nevertheless,
-          looking at large samples of a trace, we an observe than even a large
-          trace is composed of countless repetitions of a small subset of
-          patterns.
+          becomes hard to display such a trace on one page. However, if we look
+          closely at a large trace, we would notice that it's composed primarily
+          of many repetitions of subtraces.
         </Typography>
         <br />
         <img
@@ -204,17 +202,16 @@ const Thesis: React.FC = () => {
         <br />
         <br />
         <Typography variant="body1" color="textSecondary">
-          It appears that a subtrace is usually composed of many repetition of
-          several subtraces. Thus, we define a pattern to be a compressed form
-          of a subtrace that captures the patterns of the child subtraces, and
-          we map every subtrace in the full trace to it's correspoding pattern.
-          Thus, the definition of a pattern is a recursive definition. Given a
-          subtrace, we compute all the patterns of the subtraces situated
-          immediately as children of the base function call. Some of these
-          subtraces might map to the same pattern. To define the pattern for the
-          whole subtrace, we take one instance of each child pattern, and then
-          draw the base function underneath this list of unique child patterns.
-          Below is an illustration of this mapping in action.
+          Thus, we define a pattern to be a compressed form of a subtrace that
+          captures the patterns of the child subtraces, and we map every
+          subtrace in the full trace to its corresponding pattern. Thus, the
+          definition of a pattern is a recursive definition. Given a subtrace,
+          we compute all the patterns of the subtraces situated immediately as
+          children of the base function call. Some of these subtraces might map
+          to the same pattern. To define the pattern for the whole subtrace, we
+          take one instance of each child pattern, and then draw the base
+          function underneath this list of unique child patterns. Below is an
+          illustration of this mapping in action.
         </Typography>
         <br />
         <img
@@ -234,22 +231,18 @@ const Thesis: React.FC = () => {
         <br />
         <Typography variant="body1" color="textSecondary">
           The precise definition of a subtrace's pattern might seem a little
-          confusing, but it's probably better understood directly from the
-          paper.
+          confusing, so it's probably better understood directly from the paper.
           <br />
           <br />
           An important goal of any pattern definition is for there not to be a
-          large variation of patterns in a trace. This is because the whole
-          point of defining patterns is so that there is little enough of them
-          to visualize them. But the definition of a pattern should still
-          encompass the entirety of the trace; every point on the trace should
-          be a part of a pattern in some way. Our definition certainly satisfies
-          this latter property.
-          <br />
-          <br />
-          Unfortunately, our definition of a pattern results in far too many
-          varieties in a trace. A 400 million line long trace has about 400
-          distinct patterns, too many to visualization or draw on a timeline.
+          large number of patterns in a trace. This is because the whole point
+          of defining patterns is so that there is little enough of them to
+          visualize, but should still encompass the entirety of the trace; every
+          point on the trace should be a part of a pattern in some way. Our
+          definition certainly satisfies this latter property, but unfortunately
+          doesn't satisfy the former. A 400 million line long trace has about
+          400 distinct patterns, too many to visualization or draw on a
+          timeline.
         </Typography>
         <br />
         <br />
@@ -307,8 +300,7 @@ const Thesis: React.FC = () => {
           subtrace of the whole trace to their corresponding pattern. The only
           memory requirement is to hold the history of all patterns that had
           been seen, which is only on the order of 400. Most patterns don't grow
-          very long (although a few of them do, namely the ones that
-          corresponding to subtraces that constitute the entirety of the trace).
+          very long.
           <br />
           <br />
           Because of our simple pattern definition, we get a fast, scalable
@@ -319,9 +311,9 @@ const Thesis: React.FC = () => {
           <Typography variant="body1">
             <strong>Results: </strong> We created a good definition of a
             pattern. All subtraces correspond to exactly one pattern, and these
-            patterns capture the essence of a subtrace in a way that works with
+            patterns capture the essence of a subtrace in a way that aligns with
             intuition. We also clustered the set of patterns in a suitable way
-            that resulted in only a few dozen distinct clusters, which is much
+            that resulted in only a few dozen distinct clusters, which is a much
             more manageable number of objects to display in a timeline on a
             screen. Finally, we made a fast, scalable pattern mining algorithm
             that can compute the pattern for every subtrace.
@@ -332,19 +324,19 @@ const Thesis: React.FC = () => {
           Visualization
         </Typography>
         <Typography variant="body1" color="textSecondary">
-          The visualization tool is simple timeline that shows where the
-          patterns clusters in an execution trace are. The timeline starts on
-          the left and ends on the right. We show the mined patterns for 5
-          different threads below. Each pattern cluster is given a different
-          color, and the occurrence of each pattern in each thread is drawn on a
-          ribbon for that thread. If you look closely, you'll see that a ribbon
-          often has multiple colors. This is because we draw multiple patterns
-          on a single ribbon if occurrences of those patterns don't overlap. We
-          do this to keep the visualization in one screen, which is very
-          important for a human analyst. Using this space saving technique, can
-          successfully draw 35 patterns in just 10 ribbons, which is very
-          manageable to do on a single screen. We used Typescript and NodeJS to
-          develop this tool.
+          The visualization tool is a simple timeline that shows where the
+          pattern clusters in an execution trace are. The timeline starts on the
+          left and ends on the right. We show the mined patterns for 5 different
+          threads below. Each pattern cluster is given a different color, and
+          the occurrence of each pattern in each thread is drawn on a ribbon for
+          that thread. If you look closely, you'll see that a ribbon often has
+          multiple colors. This is because we draw multiple patterns on a single
+          ribbon if occurrences of those patterns don't overlap. We do this to
+          keep the visualization in one screen, which is very important for a
+          human analyst. Using this space saving technique, can successfully fit
+          35 patterns in just 10 ribbons, which allows us to draw the timelines
+          for about 10 threads on a single screen. We used Typescript and NodeJS
+          to develop this tool.
         </Typography>
         <br />
         <img className={classes.image} src={timelineTool} alt="Timeline Tool" />
@@ -374,14 +366,14 @@ const Thesis: React.FC = () => {
           color="textSecondary"
           component="div" // We make this a div so we can use make this into a flexbox
         >
-          Fig 6. A screenshot of the interactive features of the tool`
+          Fig 6. A screenshot of the interactive features of the tool
         </Typography>
         <br />
         <br />
         <Typography variant="body1" color="textSecondary">
-          With these visualization features, has both a high level view of the
-          whole execution trace, but also has the ability to click into the
-          specific subtrace that they want to gain insight into.
+          With these visualization features, the user has both a high level view
+          of the whole execution trace, but also has the ability to click into
+          the specific subtrace that they want to gain insight into.
         </Typography>
         <br />
         <GreenBox>
@@ -389,8 +381,8 @@ const Thesis: React.FC = () => {
             <strong>Results: </strong> We created a good visualization tool that
             allows a user to see pattern clusters in a timeline on one screen.
             Users can click on the pattern clusters to display the actual
-            subtrace corresponding subtrace, allowing the users to go from a
-            coarse grained view to a fine grained view with ease.
+            subtrace corresponding to the pattern cluster, allowing the users to
+            go from a coarse grained view to a fine grained view with ease.
           </Typography>
         </GreenBox>
         <br />
@@ -399,11 +391,11 @@ const Thesis: React.FC = () => {
         </Typography>
         <Typography variant="body1" color="textSecondary">
           In our work, we created a novel pattern mining algorithm that can mine
-          trace for patterns, and we built an effective visualization tool that
-          allows the user to see the patterns and the specific parts of the
+          a trace for patterns, and we built an effective visualization tool
+          that allows the user to see the patterns and the specific parts of the
           trace those patterns correspond to. Overall, my project was a success,
-          resulting in an A+ for my thesis. With some effort, perhaps my tools
-          may become real tools that can provide real value to software
+          resulting in an A+ for my thesis. With some effort, perhaps my tool
+          may become a real tool that can provide real value to software
           performance engineers in the future.
         </Typography>
       </Grid>

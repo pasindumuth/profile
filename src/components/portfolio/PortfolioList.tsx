@@ -151,7 +151,7 @@ const PortfolioList: React.FC = () => {
             title="2nd Year Project: Uberbots Robot Competition"
             period="May 2016 - Aug 2016"
             brief="During my second year, I had an intense, summer long project course. We had to work
-            in teams and 4, and we had to build a fully autonomous robot that can navigate a miniature city,
+            in teams of 4, and we had to build a fully autonomous robot that can navigate a miniature city,
             pick up passengers (stuffed toys), and drop them off at a designated delivery location."
             image={uberbotsCardImage}
             alttext="Uberbots Robot"

@@ -39,17 +39,17 @@ const Home: React.FC = () => {
           ego. I'm obsessed with building large scale, complex systems in a safe
           and correct way. I constantly think about how to best do unit tests,
           what the ideal integration testing infrastructure would be, and how to
-          write documentation that is actually maintainble and useful. I pursue
+          write documentation that is actually maintainable and useful. I pursue
           projects where I get to experience the full stack, I read articles on
           the best testing practices and why they are the best, and I learn many
           programming languages and technologies to understand different ways of
           doing things. I believe understanding multiple domains is important
-          for the enrichment knowledge, which can lead to superior, though
+          for the enrichment of knowledge, which can lead to superior, though
           unconventional, solutions.
           <br />
           <br />
           Although I have a strong passion for systems, a significant amount of
-          my work experience has been with front-end web developement. I've used
+          my work experience has been with front-end web development. I've used
           React to create high quality user interfaces, as well as complex and
           interactive data visualizations. In fact, I used React to create this
           very website. I have a strong eye for aesthetics, and I can only take

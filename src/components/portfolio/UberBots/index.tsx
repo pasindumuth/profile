@@ -47,13 +47,13 @@ const UberBots: React.FC = () => {
           UberBots Robot Competition
         </Typography>
         <Typography variant="body1" color="textSecondary">
-          During my second year of my undergrad, I had a major product course.
-          The course generally involved building a fully autonomous robot that
+          During the second year of my undergrad, I had a major project course.
+          The course generally involves building a fully autonomous robot that
           can perform a task. At the end, there would be a competition to see
-          which robot was the best. The theme of the competition differs between
-          years. In our year, we were tasked with building an "UberBot", a robot
-          that can autonomously pick-up passengers (stuffed toys) in a miniture
-          city (about 10x15 feet table) and drop them off at a designated
+          which robot was the best. The theme of the competition would differ
+          between years. In our year, we were tasked with building an "UberBot",
+          a robot that can autonomously pick-up passengers (stuffed toys) in a
+          miniature city (a 10x15 foot table) and drop them off at a designated
           location. A website showcasing our project can be found{" "}
           <Link href="https://dawgrobot.wordpress.com" color="secondary">
             here
@@ -62,10 +62,10 @@ const UberBots: React.FC = () => {
           <br />
           <br />
           During this project, I wanted to try something new. Instead of working
-          on tape following, navigation, or arm control software, I decided to
-          take full responsibility of the mechanical design. This included
-          designing the model of the robot on SOLIDWORKS, machining the parts,
-          and assembling the pieces to form the robot
+          on a software task, like tape following, navigation, or arm control
+          software, I decided to take full responsibility of the mechanical
+          design. This included designing the model of the robot in SOLIDWORKS,
+          machining the parts, and assembling the pieces to form the robot
         </Typography>
         <br />
         <GreenBox>
@@ -83,7 +83,7 @@ const UberBots: React.FC = () => {
               cutter, and hand tools
             </li>
             <li>
-              Assembles several iterations of the robot until we got to a
+              Assembled several iterations of the robot until we got to a
               strong, lightweight, aluminum prototype
             </li>
           </Typography>
@@ -102,7 +102,7 @@ const UberBots: React.FC = () => {
         <Typography variant="body1" color="textSecondary">
           Below are some screenshots of the SOLIDWORKS model for our robot. This
           is primarily my work. As you can see, we have the motors and wheels on
-          the sides making up the drive train, a lot of room up front making up
+          the sides making up the drivetrain, a lot of room up front making up
           the electronics area, and the arm in the back.
         </Typography>
         <br />
@@ -124,11 +124,11 @@ const UberBots: React.FC = () => {
           As you might have observed, the most complex subassembly of the robot
           is the arm. Below are a few images that show some more details. On the
           left, we have the turntable. This is powered by a motor mounted
-          underneath, and it's job is to turn the are around the z-axis. In the
+          underneath, and its job is to turn the arm around the z-axis. In the
           center, we see a cam powered by a motor. This component changes the
-          angle of the arm alon the y-axis (in the xz plane). Finally, on the
-          right, we see the actuator. This device moves the claw at the end in
-          and out, giving our arm it's 3rd degree of motion.
+          vertical angle of the arm. Finally, on the right, we see the actuator.
+          This device moves the claw at the end in and out, giving our arm its
+          3rd degree of motion.
         </Typography>
         <br />
         <Box className={classes.multiContainer}>
@@ -147,20 +147,18 @@ const UberBots: React.FC = () => {
         </Typography>
         <br />
         <Typography variant="body1" color="textSecondary">
-          The actuator and the was definitely one of the most intricates part
-          built during our year of robots; our professor said so. To build a
-          smooth bearing for the forearm to move in and out, and to be assemble
-          it at such a small scale with limited machines was definitely the most
-          challenges part of fabrication. However, it was certainly worth the
+          The actuator was definitely one of the most intricate parts built
+          during our year of robots; our professor said as much. To build a
+          smooth bearing for the forearm to move in and out, and to assemble it
+          at such a small scale with limited machinery was definitely the most
+          challenging part of fabrication. However, it was certainly worth the
           effort.
         </Typography>
         <br />
         <br />
         <Typography variant="h4">Gallary</Typography>
         <Typography variant="body1" color="textSecondary">
-          Below are a few nice photographs of our robot in all it's glory. We
-          had to name our robot, and we decided to name it DAWG. I'm not
-          entirely sure why...
+          Below are a few nice photographs of our robot in all its glory.
         </Typography>
         <br />
         <img
@@ -184,7 +182,7 @@ const UberBots: React.FC = () => {
           color="textSecondary"
           component="div" // We make this a div so we can use make this into a flexbox
         >
-          Fig 4. A side view of the robot, showcasing the wheels
+          Fig 4. A side view of the robot
         </Typography>
         <br />
         <img className={classes.partialImage} src={dawg} alt="Electronics" />
@@ -194,7 +192,7 @@ const UberBots: React.FC = () => {
           color="textSecondary"
           component="div" // We make this a div so we can use make this into a flexbox
         >
-          Fig 5. The full robot picking up a passenger
+          Fig 5. Our robot picking up a passenger
         </Typography>
         <br />
       </Grid>
