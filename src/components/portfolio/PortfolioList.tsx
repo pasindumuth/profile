@@ -9,7 +9,8 @@ import {
 } from "@material-ui/core";
 import { withRouter, RouteComponentProps } from "react-router-dom";
 import routes from "routes";
-import xperielCardImage from "./Xperiel/assets/xperiel-card-image.png";
+import googleCardImage from "./Google/assets/google-logo.png";
+import xperielCardImage from "./Xperiel/assets/xperiel-logo.png";
 import universalDBCardImage from "./UniversalDB/assets/universaldb-architecture.png";
 import thesisCardImage from "./Thesis/assets/trace-viz.png";
 import uberbotsCardImage from "./UberBots/assets/fullrobot.png";
@@ -115,7 +116,19 @@ const PortfolioList: React.FC = () => {
       <Grid container item justify="center" spacing={1}>
         <Grid item xs={10}>
           <PortfolioItem
-            title="Xperiel Inc."
+            title="Google LCC"
+            period="June 2019 - Aug 2019"
+            brief="I had a 3 month internship at Google's New York office in 2019. I
+            was on the Tools and Infrastructure Team, primarily developing tools for
+            the Ads platform."
+            image={googleCardImage}
+            alttext="Google Logo"
+            path={routes.GOOGLE}
+          />
+        </Grid>
+        <Grid item xs={10}>
+          <PortfolioItem
+            title="Xperiel"
             period="May 2018 - May 2019"
             brief="I worked at Xperiel for about a year, and in that time, I contributed
             a significant amount to their platform's 3D Scene rendering capability.

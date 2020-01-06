@@ -3,8 +3,9 @@ const PORTFOLIO = "/portfolio";
 let routes: { [key: string]: string } = {
   HOME: "/",
   PORTFOLIO: PORTFOLIO,
-  UNIVERSALDB: PORTFOLIO + "/universaldb",
+  GOOGLE: PORTFOLIO + "/google",
   XPERIEL: PORTFOLIO + "/xperiel",
+  UNIVERSALDB: PORTFOLIO + "/universaldb",
   THESIS: PORTFOLIO + "/thesis",
   UBERBOTS: PORTFOLIO + "/uberbots"
 };
