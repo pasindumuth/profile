@@ -24,7 +24,10 @@ const useStyles = makeStyles(theme => ({
     overflowX: "hidden" // https://github.com/mui-org/material-ui/issues/7466
   },
   intro: {
-    paddingBottom: 20
+    paddingBottom: 10
+  },
+  projectTitle: {
+    paddingTop: 30
   },
   card: {
     marginTop: 20,
@@ -96,15 +99,16 @@ const PortfolioList: React.FC = () => {
     <Grid className={classes.root} container justify="center">
       <Grid container item justify="center" spacing={1}>
         <Grid item xs={10}>
-          <Typography variant="h3" gutterBottom>
-            Portfolio
+          <Typography variant="h4" gutterBottom>
+            Work Experience
           </Typography>
           <Typography
             className={classes.intro}
             variant="body1"
             color="textSecondary"
           >
-            This is a list of projects I did that I'm most proud of.
+            These are some of the places I've worked for in the past, and what I
+            did there.
           </Typography>
         </Grid>
       </Grid>
@@ -120,6 +124,24 @@ const PortfolioList: React.FC = () => {
             alttext="Xperiel 3D Scene editor"
             path={routes.XPERIEL}
           />
+        </Grid>
+      </Grid>
+      <Grid container item justify="center" spacing={1}>
+        <Grid item xs={10}>
+          <Typography
+            className={classes.projectTitle}
+            variant="h4"
+            gutterBottom
+          >
+            Projects
+          </Typography>
+          <Typography
+            className={classes.intro}
+            variant="body1"
+            color="textSecondary"
+          >
+            This is a list of projects I did that I'm most proud of.
+          </Typography>
         </Grid>
         <Grid item xs={10}>
           <PortfolioItem
