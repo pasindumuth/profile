@@ -5,6 +5,7 @@ let routes: { [key: string]: string } = {
   PORTFOLIO: PORTFOLIO,
   GOOGLE: PORTFOLIO + "/google",
   XPERIEL: PORTFOLIO + "/xperiel",
+  ARISTA: PORTFOLIO + "/arista",
   UNIVERSALDB: PORTFOLIO + "/universaldb",
   THESIS: PORTFOLIO + "/thesis",
   UBERBOTS: PORTFOLIO + "/uberbots"

@@ -11,6 +11,7 @@ import { withRouter, RouteComponentProps } from "react-router-dom";
 import routes from "routes";
 import googleCardImage from "./Google/assets/google-logo.png";
 import xperielCardImage from "./Xperiel/assets/xperiel-logo.png";
+import aristaCardImage from "./Arista/assets/arista-logo.png";
 import universalDBCardImage from "./UniversalDB/assets/universaldb-architecture.png";
 import thesisCardImage from "./Thesis/assets/trace-viz.png";
 import uberbotsCardImage from "./UberBots/assets/fullrobot.png";
@@ -37,6 +38,19 @@ const useStyles = makeStyles(theme => ({
       marginTop: 0,
       maxHeight: 100,
       width: "auto"
+    }
+  },
+  boundingBox: {
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "contain",
+    width: "100%",
+    [theme.breakpoints.down("xs")]: {
+      height: "150px",
+      marginTop: "20px"
+    },
+    [theme.breakpoints.up("sm")]: {
+      height: "100%"
     }
   },
   period: {
@@ -69,7 +83,7 @@ const Item: React.FC<PropsType> = ({
       <CardActionArea>
         <CardContent onClick={() => history.push(path)}>
           <Grid container>
-            <Grid item container sm={9}>
+            <Grid item container xs={12} sm={9}>
               <Grid item>
                 <Typography variant="h6">{title}</Typography>
                 <Typography className={classes.period} variant="caption">
@@ -80,10 +94,11 @@ const Item: React.FC<PropsType> = ({
                 </Typography>
               </Grid>
             </Grid>
-            <Grid item container sm={3} justify="center" alignItems="center">
-              <Grid item>
-                <img className={classes.card} src={image} alt={alttext} />
-              </Grid>
+            <Grid item xs={12} sm={3}>
+              <div
+                className={classes.boundingBox}
+                style={{ backgroundImage: `url(${image})` }}
+              />
             </Grid>
           </Grid>
         </CardContent>
@@ -136,6 +151,18 @@ const PortfolioList: React.FC = () => {
             image={xperielCardImage}
             alttext="Xperiel 3D Scene editor"
             path={routes.XPERIEL}
+          />
+        </Grid>
+        <Grid item xs={10}>
+          <PortfolioItem
+            title="Arista"
+            period="Jan 2019 - May 2019"
+            brief="I interned at Arista during the first half of 2019. In that time, I
+            coded React and enhancing the CVP platform with new features. I worked on data
+            visualization and general UI with React Bootstrap."
+            image={aristaCardImage}
+            alttext="Xperiel 3D Scene editor"
+            path={routes.ARISTA}
           />
         </Grid>
       </Grid>
