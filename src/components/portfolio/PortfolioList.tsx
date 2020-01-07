@@ -12,6 +12,7 @@ import routes from "routes";
 import googleCardImage from "./Google/assets/google-logo.png";
 import xperielCardImage from "./Xperiel/assets/xperiel-logo.png";
 import aristaCardImage from "./Arista/assets/arista-logo.png";
+import rewCardImage from "./REW/assets/rew-logo.png";
 import universalDBCardImage from "./UniversalDB/assets/universaldb-architecture.png";
 import thesisCardImage from "./Thesis/assets/trace-viz.png";
 import uberbotsCardImage from "./UberBots/assets/fullrobot.png";
@@ -131,7 +132,7 @@ const PortfolioList: React.FC = () => {
       <Grid container item justify="center" spacing={1}>
         <Grid item xs={10}>
           <PortfolioItem
-            title="Google LCC"
+            title="Google"
             period="June 2019 - Aug 2019"
             brief="I had a 3 month internship at Google's New York office in 2019. I
             was on the Tools and Infrastructure Team, primarily developing tools for
@@ -149,7 +150,7 @@ const PortfolioList: React.FC = () => {
             a significant amount to their platform's 3D Scene rendering capability.
             I mostly worked with Java, C++, and graphics APIs."
             image={xperielCardImage}
-            alttext="Xperiel 3D Scene editor"
+            alttext="Xperiel Logo"
             path={routes.XPERIEL}
           />
         </Grid>
@@ -161,8 +162,20 @@ const PortfolioList: React.FC = () => {
             coded React and enhancing the CVP platform with new features. I worked on data
             visualization and general UI with React Bootstrap."
             image={aristaCardImage}
-            alttext="Xperiel 3D Scene editor"
+            alttext="Arista Logo"
             path={routes.ARISTA}
+          />
+        </Grid>
+        <Grid item xs={10}>
+          <PortfolioItem
+            title="REW"
+            period="May 2017 - Dec 2017"
+            brief="REW was the first place I interned at. I worked with a team of 5 Ruby on Rails
+            developers to add and improve site features. I also worked on data processing
+            and analytics."
+            image={rewCardImage}
+            alttext="REW logo"
+            path={routes.REW}
           />
         </Grid>
       </Grid>

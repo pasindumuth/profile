@@ -48,10 +48,10 @@ const Arista: React.FC = () => {
             Topology App
           </Link>
           . This app allows a customer to view the topology of their network
-          devices by showing the devices as nodes on a graph, and the connections
-          as graph links. My contributions included enhancement of the sidebar,
-          advanced tagging features, adding a context menu to the topology,
-          being able to select clusters, and more.
+          devices by showing the devices as nodes on a graph, and the
+          connections as graph links. My contributions included enhancement of
+          the sidebar, advanced tagging features, adding a context menu to the
+          topology, being able to select clusters, and more.
         </Typography>
         <br />
         <GreenBox>
