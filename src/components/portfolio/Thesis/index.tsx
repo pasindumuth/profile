@@ -123,6 +123,7 @@ const Thesis: React.FC = () => {
           <li> PostgreSQL </li>
         </Typography>
         <br />
+        <br />
         <Typography variant="h4" gutterBottom>
           Problem Statement
         </Typography>
@@ -245,7 +246,6 @@ const Thesis: React.FC = () => {
           timeline.
         </Typography>
         <br />
-        <br />
         <Typography variant="h5" gutterBottom>
           Dealing with a Large Number of Patterns
         </Typography>
@@ -290,7 +290,6 @@ const Thesis: React.FC = () => {
           paper.
         </Typography>
         <br />
-        <br />
         <Typography variant="h5" gutterBottom>
           Pattern Mining Algorithm
         </Typography>
@@ -319,6 +318,7 @@ const Thesis: React.FC = () => {
             that can compute the pattern for every subtrace.
           </Typography>
         </GreenBox>
+        <br />
         <br />
         <Typography variant="h4" gutterBottom>
           Visualization
@@ -385,6 +385,7 @@ const Thesis: React.FC = () => {
             go from a coarse grained view to a fine grained view with ease.
           </Typography>
         </GreenBox>
+        <br />
         <br />
         <Typography variant="h4" gutterBottom>
           Conclusion

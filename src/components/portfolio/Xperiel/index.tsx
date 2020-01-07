@@ -71,6 +71,7 @@ const Xperiel: React.FC = () => {
           <li> Metal 2</li>
         </Typography>
         <br />
+        <br />
         <Typography variant="h4">About the Company</Typography>
         <Typography variant="body1" color="textSecondary">
           Xperiel. Inc is an IOT and Augmented reality startup located in
@@ -103,7 +104,8 @@ const Xperiel: React.FC = () => {
           </li>
         </Typography>
         <br />
-        <Typography variant="h4">My Contributions</Typography>
+        <br />
+        <Typography variant="h4">Contributions</Typography>
         <Typography variant="body1" color="textSecondary">
           During my time at Xperiel, I mostly worked on the Editor and the
           Device SDK.

@@ -33,10 +33,7 @@ const REW: React.FC = () => {
         </Typography>
         <Typography variant="body1" color="textSecondary">
           My first software engineering work experience was at the{" "}
-          <Link
-            href="https://www.arista.com/en/products/arista-eos-cloud-vision#Topology-App"
-            color="secondary"
-          >
+          <Link href="https://www.rew.ca/" color="secondary">
             Real Estate Wire
           </Link>
           , or REW. REW is a real estate portal that serves most of Canada,
@@ -82,7 +79,13 @@ const REW: React.FC = () => {
         </Typography>
         <br />
         <br />
-        <Typography variant="h4">Event Tracking System</Typography>
+        <Typography variant="h4">Contributions</Typography>
+        <Typography variant="body1" color="textSecondary">
+          During my time at REW, I developed and enhanced various features that
+          helped improve the value of the product.
+        </Typography>
+        <br />
+        <Typography variant="h5">Event Tracking System</Typography>
         <Typography variant="body1" color="textSecondary">
           At the time, REW was on the verge of a new business model. They were
           looking to monetize page views and clicks. However, the website didn't
@@ -130,7 +133,7 @@ const REW: React.FC = () => {
           </Typography>
         </GreenBox>
         <br />
-        <Typography variant="h4">Mailchimp Integration</Typography>
+        <Typography variant="h5">Mailchimp Integration</Typography>
         <Typography variant="body1" color="textSecondary">
           Mailchimp is an email address handling and mailing service. It keeps
           track of all users who are subscribed to the service and provides a
@@ -156,7 +159,7 @@ const REW: React.FC = () => {
           </Typography>
         </GreenBox>
         <br />
-        <Typography variant="h4">Twilio Notification Service</Typography>
+        <Typography variant="h5">Twilio Notification Service</Typography>
         <Typography variant="body1" color="textSecondary">
           Data processing jobs occur at all times of the day, including
           non-working hours. But job failure isn't easy to see if there isn't a

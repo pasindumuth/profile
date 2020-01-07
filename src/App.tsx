@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   createMuiTheme,
   MuiThemeProvider,
   Box,
   makeStyles
 } from "@material-ui/core";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, useLocation } from "react-router-dom";
 import Header from "components/Header";
 import Footer from "components/Footer";
 import Content from "components/Content";
@@ -44,11 +44,23 @@ const useStyles = makeStyles({
   }
 });
 
+// https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/docs/guides/scroll-restoration.md
+const ScrollToTop: React.FC = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 const App: React.FC = () => {
   const classes = useStyles();
   return (
     <MuiThemeProvider theme={theme}>
       <Router>
+        <ScrollToTop />
         <Box className={classes.pageContainer}>
           <Header />
           <Box className={classes.contentContainer}>

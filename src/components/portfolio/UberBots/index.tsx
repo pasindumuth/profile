@@ -120,6 +120,7 @@ const UberBots: React.FC = () => {
           Fig 1. The final design of the robot
         </Typography>
         <br />
+        <br />
         <Typography variant="body1" color="textSecondary">
           As you might have observed, the most complex subassembly of the robot
           is the arm. Below are a few images that show some more details. On the
@@ -145,6 +146,7 @@ const UberBots: React.FC = () => {
         >
           Fig 2. The various parts of the arm.
         </Typography>
+        <br />
         <br />
         <Typography variant="body1" color="textSecondary">
           The actuator was definitely one of the most intricate parts built
@@ -175,6 +177,7 @@ const UberBots: React.FC = () => {
           Fig 3. All the electronics on our robot
         </Typography>
         <br />
+        <br />
         <img className={classes.partialImage} src={siderobot} alt="Side View" />
         <Typography
           className={classes.imageCaption}
@@ -185,7 +188,8 @@ const UberBots: React.FC = () => {
           Fig 4. A side view of the robot
         </Typography>
         <br />
-        <img className={classes.partialImage} src={dawg} alt="Electronics" />
+        <br />
+        <img className={classes.partialImage} src={dawg} alt="DAWG" />
         <Typography
           className={classes.imageCaption}
           variant="body1"
@@ -194,6 +198,7 @@ const UberBots: React.FC = () => {
         >
           Fig 5. Our robot picking up a passenger
         </Typography>
+        <br />
         <br />
       </Grid>
     </Grid>
