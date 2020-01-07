@@ -42,16 +42,19 @@ const useStyles = makeStyles(theme => ({
     }
   },
   boundingBox: {
+    boxSizing: "border-box",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "contain",
+    backgroundOrigin: "content-box",
     width: "100%",
     [theme.breakpoints.down("xs")]: {
       height: "150px",
       marginTop: "20px"
     },
     [theme.breakpoints.up("sm")]: {
-      height: "100%"
+      height: "100%",
+      paddingRight: 10
     }
   },
   period: {
@@ -84,6 +87,12 @@ const Item: React.FC<PropsType> = ({
       <CardActionArea>
         <CardContent onClick={() => history.push(path)}>
           <Grid container>
+            <Grid item xs={12} sm={3}>
+              <div
+                className={classes.boundingBox}
+                style={{ backgroundImage: `url(${image})` }}
+              />
+            </Grid>
             <Grid item container xs={12} sm={9}>
               <Grid item>
                 <Typography variant="h6">{title}</Typography>
@@ -94,12 +103,6 @@ const Item: React.FC<PropsType> = ({
                   {brief}
                 </Typography>
               </Grid>
-            </Grid>
-            <Grid item xs={12} sm={3}>
-              <div
-                className={classes.boundingBox}
-                style={{ backgroundImage: `url(${image})` }}
-              />
             </Grid>
           </Grid>
         </CardContent>
